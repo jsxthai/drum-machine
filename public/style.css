@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ece6eb;
+    font-family: Russo One;
+}
+
+.App {
+    margin-top: 50px;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pad-bank {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #1C1C1C;
+    width: 382px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #BB000E;
+    box-sizing: border-box;
+}
+
+.drum-pad {
+    background-color: rgb(245, 222, 222);
+    width: 100px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    -moz-box-shadow: inset 0 0 7px #000000;
+    -webkit-box-shadow: inset 0 0 7px #000000;
+    box-shadow: inset 0 0 7px #000000;
+    user-select: none;
+}
+
+.clicked {
+    background-color: #E31C25;
+    transform: translate(0, 2px);
+    box-shadow: 0 1px #E31C25;
+}
+
+#display {
+    color: #BB000E;
+    font-size: 22px;
+    margin: 10px;
+    text-align: center;
+}
+
+.switch-mode {
+    margin: 0;
+}
+
+
+/* sas */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 10px 0 10px 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1C1C1C;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(245, 222, 222);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #E31C25;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #E31C25;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}

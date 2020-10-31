@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import PadBank from "./components/PadBank";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: "click drum ..."
+    };
+  }
+  displayName = (name) =>{
+    this.setState({
+      display: name
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <p id="display">{this.state.display}</p>
+
+        <PadBank updateDisplay={this.displayName}/>
+      </div>
+    );
+  }
 }
 
 export default App;
